@@ -1,6 +1,6 @@
 {
   "name": "text2image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create image from text",
   "main": "index.js",
   "directories": {
