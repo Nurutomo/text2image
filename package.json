@@ -1,6 +1,6 @@
 {
   "name": "text2image",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Create image from text",
   "main": "index.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nurutomo/textToImage.git"
+    "url": "git+https://github.com/Nurutomo/text2image.git"
   },
   "keywords": [
     "text",
@@ -22,9 +22,9 @@
   "author": "Nurutomo",
   "license": "GPL3",
   "bugs": {
-    "url": "https://github.com/Nurutomo/textToImage/issues"
+    "url": "https://github.com/Nurutomo/text2image/issues"
   },
-  "homepage": "https://github.com/Nurutomo/textToImage#readme",
+  "homepage": "https://github.com/Nurutomo/text2image#readme",
   "dependencies": {
     "opentype.js": "^1.3.3",
     "sharp": "^0.26.2"
