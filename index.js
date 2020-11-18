@@ -5,7 +5,7 @@ const { toPoints, toPath } = require('svg-points')
 const { boundingBox, offset } = require('points')
 const opentype = require('opentype.js')
 const emojiRegex = require('emoji-regex/RGI_Emoji.js')()
-const emojiData = require('./emoji-data.json')
+// const emojiData = require('./emoji-data.json')
 
 module.exports.convert = async function (font = new opentype.Font(), text = '', x = 0, y = 0, size = 72, options) {
     text = text.toString()//.replace(emojiRegex, '?')
