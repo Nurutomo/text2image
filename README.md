@@ -3,12 +3,12 @@
 -----------------------------------
 Installation:
 ```
-npm i image2text
+npm i text2image
 ```
 
 Usage:
 ```js
-const image2text = require('image2text')
+const text2image = require('text2image')
 ```
 
 Load font
