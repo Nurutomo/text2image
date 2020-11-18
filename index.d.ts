@@ -8,8 +8,13 @@ import { Font } from "opentype.js";
  * @param {Number} y Y position
  * @param {Number} size Font Size (px)
  * @param {Object} options
- * @param {String} options.attr SVG Attribute
+ * @param {String} options.attr SVG Path attribute
+ * @param {CanvasTextAlign} options.align Align text
+ * @param {Number} options.lineHeight Use SVG instead of Image
+ * @param {Number} options.padding Use SVG instead of Image
  * @param {Boolean} options.useSvg Use SVG instead of Image
+ * @param {String} options.prepend Before Path element
+ * @param {String} options.append After Path element
  * @returns {Promise<Buffer>} XML SVG or Image Buffer
  * @example
  * // PNG
@@ -23,18 +28,23 @@ import { Font } from "opentype.js";
  * })
  */
 declare function convert(font: Font, text: String, x?: Number, y?: Number, size?: Number, options?: {
+    align?: CanvasTextAlign,
     attr?: String,
-    useSvg?: Boolean
-}): Promise<Buffer>;
+    lineHeight?: Number,
+    padding?: Number,
+    useSvg?: Boolean,
+}): Promise<CustomBuffer>;
 
 /**
  * Load Font
- * @param {String|Buffer} path Path to font 'path/to/font.ttf'
+ * @param {FontPath} fontPaths Path to font 'path/to/font.ttf'
  * @returns {Font} font object
  * @example
- * const font = text2image.loadFont('path/to/font.ttf') // Font Glyphs Data
+ * // second argument is used if first argument file doesn't exist
+ * // this also checks for default font directory
+ * const font = text2image.loadFont('path/to/font.ttf', 'Arial', 'arial.ttf') // Font Glyphs Data
  */
-declare function loadFont(path: String|Buffer): Font;
+declare function loadFont(...fontPaths: FontPath): Font;
 
 /**
  * Static functions
