@@ -35,9 +35,6 @@
     "sharp": "^0.26.2",
     "svg-points": "^6.0.1"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "mocha": "^8.2.1"
   }
