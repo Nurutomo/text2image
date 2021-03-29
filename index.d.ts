@@ -15,6 +15,7 @@ import { Font } from "opentype.js";
  * @param {Boolean} options.useSvg Use SVG instead of Image
  * @param {String} options.prepend Before Path element
  * @param {String} options.append After Path element
+ * @param {String} options.color Define color for your text (hex, color, rgb, rgba)
  * @returns {Promise<Buffer>} XML SVG or Image Buffer
  * @example
  * // PNG
@@ -23,7 +24,7 @@ import { Font } from "opentype.js";
  * })
  * 
  * // SVG
- * text2image.convert(font, 'Hello, World!', 0, 0, 72, { useSvg: true }).then(buffer => {
+ * text2image.convert(font, 'Hello, World!', 0, 0, 72, { useSvg: true, color: 'red' }).then(buffer => {
  *     fs.writeFileSync('hello_world.svg', buffer) // <Buffer 3c 73 76 ...
  * })
  */
@@ -33,6 +34,7 @@ declare function convert(font: Font, text: String, x?: Number, y?: Number, size?
     lineHeight?: Number,
     padding?: Number,
     useSvg?: Boolean,
+    color?: String
 }): Promise<CustomBuffer>;
 
 /**

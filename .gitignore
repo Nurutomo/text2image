@@ -108,3 +108,6 @@ test/test*.*
 
 # Large File
 emoji-data.json
+
+# Mac OS
+.DS_Store
