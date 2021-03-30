@@ -25,6 +25,7 @@ module.exports.convert = async function (font = new opentype.Font(), text = '', 
         padding: 0,
         prepend: '',
         append: '',
+        color: 'black',
         // emoji: true,
     }
     options = { ...Default, ...options }
@@ -65,7 +66,7 @@ module.exports.convert = async function (font = new opentype.Font(), text = '', 
         else if (options.align == 'right' || options.align == 'end') xAlign = (maxWidth - width) + x - left
         point = offset(point, xAlign, yAlign)
         yMin = Math.min(yMin, boundingBox(point).top)
-        paths.push(`<path d="${toPath(point)}"${options.attr ? ' ' + options.attr : ''}/>`)
+        paths.push(`<path fill="${options.color}" d="${toPath(point)}"${options.attr ? ' ' + options.attr : ''}/>`)
         maxHeight = Math.max(maxHeight, boundingBox(point).bottom + options.padding * 2)
     }
     // TODO: Emoji

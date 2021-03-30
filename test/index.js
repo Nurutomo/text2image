@@ -1,7 +1,8 @@
-const textToImage = require('../')
-const assert = require('assert')
-var font
-var testText = 'HARTA\nTAHTA\nMANUSIA'
+const textToImage = require('../');
+const assert = require('assert');
+const fs = require('fs');
+var font;
+var testText = 'HARTA\nTAHTA\nMANUSIA';
 
 describe('Main', () => {
     it('Loading font \'Arial\'', done => {
@@ -12,9 +13,9 @@ describe('Main', () => {
 
     it('Generate SVG and convert to image and save it in \'./test/test.png\'', async () => {
         let buffer = await textToImage.convert(font, testText, 0, 0, 512, {
-            align: 'center',
+            align: 'center'
         })
-        require('fs').writeFileSync(path = __dirname + '\\test.png', buffer)
+        fs.writeFileSync('./test/test.png', buffer)
         assert.strictEqual(buffer[0], 0x89)
         assert.strictEqual(buffer[1], 0x50)
         assert.strictEqual(buffer[2], 0x4e)
@@ -25,8 +26,9 @@ describe('Main', () => {
         let buffer = await textToImage.convert(font, testText, 0, 0, 512, {
             useSvg: true,
             align: 'center',
+            color: 'green'
         })
-        require('fs').writeFileSync(path = __dirname + '\\test.svg', buffer)
+        fs.writeFileSync('./test/test.svg', buffer)
         assert.strictEqual(buffer[0], 0x3c)
         assert.strictEqual(buffer[1], 0x73)
         assert.strictEqual(buffer[2], 0x76)
